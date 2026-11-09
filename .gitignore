@@ -9,8 +9,8 @@ __pycache__/
 .idea/
 .vscode/
 
-# Daten: nie committen (PostAuto-Rohdaten sind potenziell personenbezogen)
-data/raw/*
+# Rohdaten (data/raw) gehoeren ins Repo, damit das Notebook reproduzierbar laeuft.
+# Abgeleitete Dateien und grosse Downloads nicht:
 data/processed/*
-!data/raw/.gitkeep
 !data/processed/.gitkeep
+data/raw/*.zip

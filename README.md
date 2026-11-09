@@ -29,6 +29,10 @@ Zusätzlich sollen verschiedene Metriken berechnet werden:
 - [Haltestelle / Haltekante](https://opendata.swiss/en/dataset/haltestelle-haltekante)
 - [Fahrplan 2026 (GTFS)](https://ckan.opendata.swiss/de/dataset/fahrplan-2026-gtfs2020/resource/78c47ea6-2da7-4be2-9f7c-8409db436e81)
 
+**Alternative Quelle (noch offen, ob wir sie statt GTFS verwenden):**
+
+- [Swiss Public Transport API](https://transport.opendata.ch) (`transport.opendata.ch`): kostenlose JSON-API ohne Schlüssel für Haltestellen (`/locations`), Verbindungen (`/connections`) und Abfahrten (`/stationboard`). Sie ist einfacher einzurichten als GTFS, liefert aber nur den aktuellen Fahrplan und hat ein Fair-Use-Limit.
+
 Die PostAuto-Rohdaten gehören nur ins Repository, wenn sie anonymisiert sind und die Weitergabe mit der Datenquelle geklärt ist.
 
 ## Vorgehen
