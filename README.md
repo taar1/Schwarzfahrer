@@ -43,7 +43,7 @@ Die Kontrolldaten (`ASP_202509.XLSX`) enthalten Geburtsdaten und sind deshalb **
 
 1. `scripts\setup.ps1` ausführen (virtuelle Umgebung, Pakete, Output-Filter).
 2. Die Excel-Datei wie oben ablegen.
-3. `notebooks/01_analyse.ipynb` in VS Code öffnen, Kernel `.venv` wählen und «Run All».
+3. `notebooks/01_analyse.ipynb` in VS Code öffnen, Kernel `.venv` wählen und "Run All".
 
 ## Vorgehen
 
