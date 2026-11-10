@@ -3,3 +3,4 @@ pandas
 matplotlib
 nbstripout
 folium
+openpyxl

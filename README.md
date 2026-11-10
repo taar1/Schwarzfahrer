@@ -35,6 +35,16 @@ Zusätzlich sollen verschiedene Metriken berechnet werden:
 
 Die PostAuto-Rohdaten gehören nur ins Repository, wenn sie anonymisiert sind und die Weitergabe mit der Datenquelle geklärt ist.
 
+## Daten lokal bereitstellen
+
+Die Kontrolldaten (`ASP_202509.XLSX`) enthalten Geburtsdaten und sind deshalb **nicht im Repository**. Wer das Notebook ausführen will, legt die Datei selbst unter `data/raw/ASP_202509.XLSX` ab. Ohne sie bricht das Notebook mit einer Fehlermeldung ab.
+
+## Notebook ausführen
+
+1. `scripts\setup.ps1` ausführen (virtuelle Umgebung, Pakete, Output-Filter).
+2. Die Excel-Datei wie oben ablegen.
+3. `notebooks/01_analyse.ipynb` in VS Code öffnen, Kernel `.venv` wählen und «Run All».
+
 ## Vorgehen
 
 1. **Daten einlesen:** PostAuto-Daten, Haltestellen und Fahrplan laden und bereinigen.

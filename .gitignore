@@ -14,3 +14,8 @@ __pycache__/
 data/processed/*
 !data/processed/.gitkeep
 data/raw/*.zip
+
+# Kontrolldaten enthalten Geburtsdatum: nicht committen, solange nicht anonymisiert
+data/raw/ASP_*
+data/raw/*.xlsx
+data/raw/*.XLSX
