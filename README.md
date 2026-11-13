@@ -39,19 +39,32 @@ Die PostAuto-Rohdaten gehören nur ins Repository, wenn sie anonymisiert sind un
 
 Die Kontrolldaten (`ASP_202509.XLSX`) enthalten Geburtsdaten und sind deshalb **nicht im Repository**. Wer das Notebook ausführen will, legt die Datei selbst unter `data/raw/ASP_202509.XLSX` ab. Ohne sie bricht das Notebook mit einer Fehlermeldung ab.
 
-## Notebook ausführen
+Die Haltestellendaten lädt Notebook 1 beim ersten Lauf selbst herunter und speichert sie in `data/raw/`.
+
+## Notebooks ausführen
 
 1. `scripts\setup.ps1` ausführen (virtuelle Umgebung, Pakete, Output-Filter).
 2. Die Excel-Datei wie oben ablegen.
-3. `notebooks/01_analyse.ipynb` in VS Code öffnen, Kernel `.venv` wählen und "Run All".
+3. Die Notebooks in VS Code der Reihe nach öffnen, Kernel `.venv` wählen und "Run All":
 
-## Vorgehen
+| Notebook | Inhalt |
+|---|---|
+| `01_daten_laden.ipynb` | Daten laden, prüfen, bereinigen, Haltestellen zuordnen, Ergebnis als CSV speichern |
+| `02_analyse.ipynb` | Kennzahlen berechnen und als CSV speichern |
+| `03_darstellung.ipynb` | Überblicksdiagramm, Zeitraster, Jahrgänge und Heatmap auf der Karte |
+| `04_bericht.ipynb` | Business Case: Einleitung, Daten, Vorgehen, Ergebnisse, Grenzen, Fazit |
 
-1. **Daten einlesen:** PostAuto-Daten, Haltestellen und Fahrplan laden und bereinigen.
-2. **Mapping:** Die erfassten Fälle auf Zug- und Busverbindungen abbilden.
-3. **Auswertung:** Statistiken pro Verbindung, Linie und Zeitraum berechnen.
-4. **Darstellung:** Die Ergebnisse als Tabellen und Grafiken aufbereiten.
+Jedes Notebook liest die Dateien, die das vorherige in `data/processed/` gespeichert hat.
 
-## Projektstruktur und Nutzung
+## Projektstruktur
 
-Wird ergänzt, sobald der Code im Repository liegt (Python 3, Abhängigkeiten, Startbefehl).
+```
+data/raw/         Rohdaten (Excel nur lokal, Haltestellen werden heruntergeladen)
+data/processed/   Ergebnisse der Notebooks (nicht im Repo)
+notebooks/        die vier Notebooks
+scripts/          Setup für virtuelle Umgebung und Output-Filter
+```
+
+## Offene Punkte
+
+- **Geschlecht (Joel):** klären, wie die Codes in der Spalte `GENDER` der Excel-Datei zu lesen sind. Die Notebooks nehmen die Norm ISO 5218 an (1 = männlich, 2 = weiblich, 3 = andere) und markieren die Werte deshalb mit "(?)". Falls das Mapping anders ist, muss `gender_labels` in `01_daten_laden.ipynb` angepasst werden.

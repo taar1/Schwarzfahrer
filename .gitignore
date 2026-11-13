@@ -19,3 +19,5 @@ data/raw/*.zip
 data/raw/ASP_*
 data/raw/*.xlsx
 data/raw/*.XLSX
+# Lädt Notebook 1 selbst herunter
+data/raw/haltestelle_haltekante.csv
